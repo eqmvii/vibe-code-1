@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+  <div class="app-container" :class="{ 'strobing': strobing }">
     <h1 class="title">Hi! I am a Vue3 app served from a docker container on a windows machine without node installed.</h1>
     <button @click="toggleMessage" class="button primary">Snow?</button>
     <p v-if="showMessage" class="message">{{ message }}</p>
@@ -11,7 +11,7 @@
   </div>
     
     <div class="components-container">
-      <TodoList />
+      <TodoList @todo-completed="startStrobe" />
     </div>
   </div>
 </template>
@@ -26,12 +26,19 @@ export default {
   data() {
     return {
       message: 'SWE-1-lite did this!',
-      showMessage: false
+      showMessage: false,
+      strobing: false
     }
   },
   methods: {
     toggleMessage() {
       this.showMessage = !this.showMessage
+    },
+    startStrobe() {
+      this.strobing = true
+      setTimeout(() => {
+        this.strobing = false
+      }, 3000)
     }
   }
 }
@@ -52,6 +59,16 @@ export default {
   align-items: center;
   position: relative;
   overflow: hidden;
+}
+
+.app-container.strobing {
+  animation: strobe 0.1s infinite;
+}
+
+@keyframes strobe {
+  0% { background: var(--background-secondary); }
+  50% { background: rgba(255, 0, 0, 0.5); }
+  100% { background: var(--background-secondary); }
 }
 
 .title {

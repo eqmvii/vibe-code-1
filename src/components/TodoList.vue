@@ -45,7 +45,10 @@ export default {
       }
     },
     toggleTodo(index) {
-      this.todos[index].completed = !this.todos[index].completed
+      const isCompleted = this.todos[index].completed = !this.todos[index].completed
+      if (isCompleted) {
+        this.$emit('todo-completed')
+      }
     },
     removeTodo(index) {
       this.todos.splice(index, 1)

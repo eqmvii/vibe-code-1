@@ -1,3 +1,12 @@
+# WINDSURF VIBE CODING MAXIMUM COMDEDY:
+
+* Asked Windsurf to create app containerized app with Vue 
+* It did, eventually
+* Now trying to move app to WSL directories which is ambitious
+* That was dumb and wrong, gave up.
+* Got git and SSH keys working in windows, now pushed as hoped to https://github.com/eqmvii/vibe-code-1
+* lfg 
+
 # Vue3 Hello World App
 
 A simple Vue3 application running in a Docker container.
@@ -23,3 +32,4 @@ docker-compose up --build
 - `package.json` - Node.js dependencies
 - `Dockerfile` - Container configuration
 - `docker-compose.yml` - Service configuration
+

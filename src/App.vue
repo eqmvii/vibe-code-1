@@ -16,6 +16,18 @@
       <h2 class="title">"Add a complete working copy of the game simon underneath the todolist."</h2>
       <SimonGame />
     </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <a href="https://github.com/eqmvii" target="_blank" class="github-link">
+          <span class="github-icon">⭐</span>
+          <span class="github-text">eqmvii</span>
+        </a>
+        <a href="https://github.com/eqmvii/vibe-code-1" target="_blank" class="repo-link">
+          <span class="repo-icon">📦</span>
+          <span class="repo-text">vibe-code-1</span>
+        </a>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -64,6 +76,47 @@ export default {
   align-items: center;
   position: relative;
   overflow: hidden;
+}
+
+.footer {
+  width: 100%;
+  padding: 2rem;
+  background: var(--background-tertiary);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.github-link, .repo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.github-link:hover, .repo-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.github-icon, .repo-icon {
+  font-size: 1.2rem;
+}
+
+.github-text, .repo-text {
+  font-weight: 500;
 }
 
 .app-container.strobing {

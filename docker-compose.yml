@@ -4,15 +4,9 @@ services:
   web:
     build: .
     ports:
-      - "8080:8080"
+      - "5173:5173"
     volumes:
-      - .:/app:delegated
+      - .:/app
       - /app/node_modules
     environment:
       - NODE_ENV=development
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 512M
-    command: npm run build && npm start

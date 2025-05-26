@@ -9,9 +9,8 @@ RUN npm install
 # Copy source code
 COPY . .
 
-# Build the application
-RUN npm run build
+# Expose the development server port
+EXPOSE 5173
 
-# Start the preview server
-EXPOSE 8080
-CMD ["npm", "run", "preview", "--", "--port", "8080"]
+# Start the development server
+CMD ["npm", "run", "dev"]

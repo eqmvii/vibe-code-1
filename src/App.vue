@@ -1,7 +1,8 @@
 <template>
   <div class="app-container" :class="{ 'strobing': strobing }">
-    <h1 class="title">Hi! I'm a Vue3 app served from a docker container on a windows machine without node installed.</h1>
-    <button @click="toggleMessage" class="button primary">Snow?</button>
+    <h2 class="title">👋 I was a Vue3 app served from a docker container on a windows machine without node installed.</h2>
+    <h2 class="title">Now I'm a Vite-built bundle served on GH pages.</h2>
+    <button @click="toggleMessage" class="button primary">Toggle Snow</button>
     <p v-if="showMessage" class="message">{{ message }}</p>
   <div v-if="showMessage" class="snow-container">
     <div class="snowflake" v-for="i in 50" :key="i" :style="{
@@ -12,6 +13,7 @@
     
     <div class="components-container">
       <TodoList @todo-completed="startStrobe" />
+      <h2 class="title">"Add a complete working copy of the game simon underneath the todolist. Do not use sound."</h2>
       <SimonGame />
     </div>
   </div>
@@ -77,7 +79,7 @@ export default {
 .title {
   color: var(--text-primary);
   margin-bottom: 2.5rem;
-  font-size: 2.8rem;
+  font-size: 2rem; /* Reduced from 2.8rem to 2rem (about 30% smaller) */
   letter-spacing: -0.05em;
   font-weight: 700;
   background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));

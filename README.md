@@ -1,3 +1,7 @@
+# View the Monstrosity
+
+[https://eqmvii.github.io/vibe-code-1/](https://eqmvii.github.io/vibe-code-1/)
+
 # WINDSURF VIBE CODING MAXIMUM COMDEDY:
 
 app lives at: http://localhost:5173/

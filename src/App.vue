@@ -1,8 +1,8 @@
 <template>
   <div class="app-container">
     <h1 class="title">Hi! I am a Vue3 app served from a docker container on a windows machine without node installed.</h1>
-    <button @click="showMessage" class="button primary">Walrus Button</button>
-    <p v-if="message" class="message">{{ message }}</p>
+    <button @click="toggleMessage" class="button primary">Walrus Button</button>
+    <p v-if="showMessage" class="message">{{ message }}</p>
     
     <div class="components-container">
       <TodoList />
@@ -19,12 +19,13 @@ export default {
   },
   data() {
     return {
-      message: ''
+      message: 'hot reload works!',
+      showMessage: false
     }
   },
   methods: {
-    showMessage() {
-      this.message = 'hot reload works!'
+    toggleMessage() {
+      this.showMessage = !this.showMessage
     }
   }
 }

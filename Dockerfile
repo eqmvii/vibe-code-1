@@ -6,7 +6,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-# Copy source code
+# Copy deploy script and make it executable
+COPY deploy.sh .
+RUN chmod +x deploy.sh
+
+# Copy the rest of the source code
 COPY . .
 
 # Expose the development server port

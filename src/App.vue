@@ -1,6 +1,6 @@
 <template>
   <div class="app-container" :class="{ 'strobing': strobing }">
-    <h1 class="title">Hi! I am a Vue3 app served from a docker container on a windows machine without node installed.</h1>
+    <h1 class="title">Hi! I'm a Vue3 app served from a docker container on a windows machine without node installed.</h1>
     <button @click="toggleMessage" class="button primary">Snow?</button>
     <p v-if="showMessage" class="message">{{ message }}</p>
   <div v-if="showMessage" class="snow-container">

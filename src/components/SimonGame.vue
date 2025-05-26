@@ -50,10 +50,20 @@ export default {
     },
     async playSequence() {
       this.isPlaying = true
+      // Clear any active pad state
+      this.activePad = null
+      
+      // Add a small delay before starting the sequence
+      await this.sleep(500)
+      
       for (let i = 0; i < this.sequence.length; i++) {
         await this.flashPad(this.sequence[i])
-        await this.sleep(500)
+        // Use gameSpeed for gap between flashes for consistency
+        await this.sleep(this.gameSpeed)
       }
+      
+      // Small delay before allowing player input
+      await this.sleep(500)
       this.isPlaying = false
     },
     async flashPad(padIndex) {
@@ -110,25 +120,32 @@ export default {
 
 .simon-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
   margin: 2rem 0;
+  justify-items: center;
 }
 
 .simon-pad {
   aspect-ratio: 1;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 0.1s, box-shadow 0.1s;
+  transition: all 0.2s ease;
+  width: 200px;
+  height: 200px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .simon-pad:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 .simon-pad.active {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+  border-width: 6px;
 }
 
 .red {

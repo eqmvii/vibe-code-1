@@ -13,7 +13,7 @@
     
     <div class="components-container">
       <TodoList @todo-completed="startStrobe" />
-      <h2 class="title">"Add a complete working copy of the game simon underneath the todolist. Do not use sound."</h2>
+      <h2 class="title">"Add a complete working copy of the game simon underneath the todolist."</h2>
       <SimonGame />
     </div>
   </div>

@@ -12,16 +12,19 @@
     
     <div class="components-container">
       <TodoList @todo-completed="startStrobe" />
+      <SimonGame />
     </div>
   </div>
 </template>
 
 <script>
 import TodoList from './components/TodoList.vue'
+import SimonGame from './components/SimonGame.vue'
 
 export default {
   components: {
-    TodoList
+    TodoList,
+    SimonGame
   },
   data() {
     return {

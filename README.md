@@ -1,5 +1,7 @@
 # WINDSURF VIBE CODING MAXIMUM COMDEDY:
 
+app lives at: http://localhost:5173/
+
 * Asked Windsurf to create app containerized app with Vue around 10:30am
 * It did, eventually
 * Now trying to move app to WSL directories which is ambitious
@@ -11,6 +13,8 @@
 * Make it pretty: "Now let's style the whole app. Please make it black and white and grey, futuristic looking, like an apple product released in 2030."
 
 ![Demo](demos/demo1.gif)
+
+VVV boilerplate spat out from Vue3 and Windsurf below VVV
 
 # Vue3 Hello World App
 

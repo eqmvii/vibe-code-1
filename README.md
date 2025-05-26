@@ -1,11 +1,12 @@
 # WINDSURF VIBE CODING MAXIMUM COMDEDY:
 
-* Asked Windsurf to create app containerized app with Vue 
+* Asked Windsurf to create app containerized app with Vue around 10:30am
 * It did, eventually
 * Now trying to move app to WSL directories which is ambitious
 * That was dumb and wrong, gave up.
 * Got git and SSH keys working in windows, now pushed as hoped to https://github.com/eqmvii/vibe-code-1
 * lfg 
+* Well that was a long walk. Ran in circles with a completely insane and broken dockerfile and dockercompose "architecture." Deleted everything and rebuilt one small prompt at a time and got there. Now 12:19pm, got some food. 
 
 # Vue3 Hello World App
 

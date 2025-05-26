@@ -10,3 +10,13 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+      - VITE_PORT=5173
+    command: npm run dev -- --host
+    stdin_open: true
+    tty: true
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5173"]
+      interval: 5s
+      timeout: 5s
+      retries: 5

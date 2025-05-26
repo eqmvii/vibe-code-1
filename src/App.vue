@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     showMessage() {
-      this.message = 'oh seamus o\'connor'
+      this.message = 'hot reload test 2'
     }
   }
 }

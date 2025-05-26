@@ -1,22 +1,24 @@
-# Vue3 Todo List App
+# WINDSURF VIBE CODING MAXIMUM COMDEDY:
 
-<video src="demos/2025.05.26.12.47.ToDoListDemo.mp4" controls autoplay loop muted></video>
+* Asked Windsurf to create app containerized app with Vue around 10:30am
+* It did, eventually
+* Now trying to move app to WSL directories which is ambitious
+* That was dumb and wrong, gave up.
+* Got git and SSH keys working in windows, now pushed as hoped to https://github.com/eqmvii/vibe-code-1
+* lfg 
+* Well that was a long walk. Ran in circles with a completely insane and broken dockerfile and dockercompose "architecture." Deleted everything and rebuilt one small prompt at a time and got there. Now 12:19pm, got some food. 
+* switched to chat mode, it tried chatting with me and adding random features but couldn't edit code. It seemed to think it could? 5 billion app lfg
+* Make it pretty: "Now let's style the whole app. Please make it black and white and grey, futuristic looking, like an apple product released in 2030."
 
-A sleek, futuristic Vue3 Todo List application running in a Docker container. This project showcases modern web development practices with a containerized Vue.js application.
+![Demo](demos/demo1.gif)
 
-## Features
+# Vue3 Hello World App
 
-- Modern, Apple-inspired dark theme design
-- Glassmorphism effects and smooth animations
-- Hot-reload functionality
-- Containerized development environment
-- Simple yet elegant todo list interface
+A simple Vue3 application running in a Docker container.
 
-## Tech Stack
+## Prerequisites
 
-- Vue 3
-- Vite
-- Docker
+- Docker Desktop
 - Docker Compose
 
 ## Getting Started
@@ -31,7 +33,6 @@ docker-compose up --build
 ## Project Structure
 
 - `src/` - Source code directory
-- `demos/` - Demo videos and recordings
 - `index.html` - Main HTML file
 - `package.json` - Node.js dependencies
 - `Dockerfile` - Container configuration

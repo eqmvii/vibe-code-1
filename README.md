@@ -7,6 +7,8 @@
 * Got git and SSH keys working in windows, now pushed as hoped to https://github.com/eqmvii/vibe-code-1
 * lfg 
 * Well that was a long walk. Ran in circles with a completely insane and broken dockerfile and dockercompose "architecture." Deleted everything and rebuilt one small prompt at a time and got there. Now 12:19pm, got some food. 
+* switched to chat mode, it tried chatting with me and adding random features but couldn't edit code. It seemed to think it could? 5 billion app lfg
+* Make it pretty: "Now let's style the whole app. Please make it black and white and grey, futuristic looking, like an apple product released in 2030."
 
 # Vue3 Hello World App
 

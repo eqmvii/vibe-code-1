@@ -1,15 +1,15 @@
 <template>
   <div class="todo-container">
-    <h2>Todo List</h2>
+    <h2 class="section-title">Todo List</h2>
     <div class="todo-input">
       <input
         v-model="newTodo"
         @keyup.enter="addTodo"
         type="text"
         placeholder="Add a new task..."
-        class="todo-input-field"
+        class="input"
       />
-      <button @click="addTodo" class="add-button">Add</button>
+      <button @click="addTodo" class="button secondary">Add</button>
     </div>
     <ul class="todo-list">
       <li v-for="(todo, index) in todos" :key="index" class="todo-item">
@@ -20,7 +20,7 @@
           class="todo-checkbox"
         />
         <span :class="{ 'completed': todo.completed }">{{ todo.text }}</span>
-        <button @click="removeTodo(index)" class="remove-button">×</button>
+        <button @click="removeTodo(index)" class="button remove">×</button>
       </li>
     </ul>
   </div>
@@ -56,45 +56,56 @@ export default {
 
 <style scoped>
 .todo-container {
-  background: #f8fafc;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  border-radius: 20px;
   margin: 2rem 0;
+  background: var(--background-tertiary);
+  border: var(--glass-border);
+}
+
+.section-title {
+  color: var(--text-primary);
+  margin-bottom: 1.75rem;
+  font-size: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .todo-input {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
 }
 
-.todo-input-field {
+.input {
   flex: 1;
-  padding: 0.75rem;
-  border: 2px solid #e5e7eb;
-  border-radius: 6px;
-  font-size: 1rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: var(--background-secondary);
+  color: var(--text-primary);
+  border: var(--glass-border);
+  transition: all var(--transition-duration) ease;
 }
 
-.todo-input-field:focus {
+.input:focus {
   outline: none;
-  border-color: #42b983;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-.add-button {
-  background: #42b983;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.2s;
+.button.secondary {
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--text-primary);
+  padding: 0.875rem 1.75rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
-.add-button:hover {
-  background: #38a169;
+.button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 .todo-list {
@@ -105,51 +116,60 @@ export default {
 .todo-item {
   display: flex;
   align-items: center;
-  padding: 0.75rem;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: all var(--transition-duration) ease;
 }
 
 .todo-item:last-child {
   border-bottom: none;
 }
 
+.todo-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
 .todo-checkbox {
-  margin-right: 1rem;
+  margin-right: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  accent-color: var(--accent-color);
+  border: 2px solid var(--text-quaternary);
+  border-radius: 4px;
+}
+
+.todo-checkbox:checked {
+  border-color: var(--accent-color);
+}
+
+.todo-item-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
 }
 
 .completed {
   text-decoration: line-through;
-  color: #6b7280;
-  opacity: 0.7;
-  transition: all 0.2s ease;
+  color: var(--text-quaternary);
+  opacity: 0.8;
+  transition: all var(--transition-duration) ease;
 }
 
-.todo-item {
-  display: flex;
-  align-items: center;
-  padding: 0.75rem;
-  border-bottom: 1px solid #e5e7eb;
-  transition: background-color 0.2s;
-}
-
-.todo-item:hover {
-  background-color: #f8fafc;
-}
-
-.todo-item.completed {
-  background-color: #f8fafc;
-}
-
-.remove-button {
+.button.remove {
   margin-left: auto;
-  background: none;
+  background: transparent;
   border: none;
-  color: #dc2626;
-  font-size: 1.25rem;
-  cursor: pointer;
+  color: var(--text-quaternary);
+  font-size: 1.75rem;
+  padding: 0.75rem;
+  transition: all var(--transition-duration) ease;
 }
 
-.remove-button:hover {
-  color: #b91c1c;
+.button.remove:hover {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 </style>

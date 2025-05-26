@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
-    <h1>Hi Liana, I am running from within a docker container</h1>
-    <button @click="showMessage" class="green-button">Click Me</button>
+    <h1 class="title">Hi Liana, I am running from within a docker container</h1>
+    <button @click="showMessage" class="button primary">Click Me</button>
     <p v-if="message" class="message">{{ message }}</p>
     
     <div class="components-container">
@@ -31,43 +31,99 @@ export default {
 </script>
 
 <style>
+@import './styles/global.css';
+
 .app-container {
   text-align: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
   max-width: 800px;
   margin: 0 auto;
+  background: var(--background-secondary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1 {
-  color: #42b983;
-  margin-bottom: 1.5rem;
+.title {
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  font-size: 2.8rem;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .components-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 3rem;
+  width: 100%;
 }
 
-.green-button {
-  background-color: #42b983;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.2s;
+.button.primary {
+  background: var(--accent-color);
+  color: var(--background-primary);
+  padding: 1.25rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-.green-button:hover {
-  background-color: #38a169;
+.button.primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
 }
 
 .message {
-  margin-top: 1rem;
-  color: #42b983;
-  font-weight: bold;
+  margin-top: 1.25rem;
+  color: var(--text-quaternary);
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glass effect for components */
+.components-container > * {
+  @apply glass;
+}
+
+/* Smooth transitions */
+.app-container, .components-container > * {
+  transition: all var(--transition-duration) ease;
+}
+
+/* Hover effects */
+.components-container > *:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 64px var(--shadow-color);
+}
+
+/* Smooth scroll */
+.app-container {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-quaternary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
 }
 </style>

@@ -15,7 +15,7 @@
       <li v-for="(todo, index) in todos" :key="index" class="todo-item">
         <input
           type="checkbox"
-          v-model="todo.completed"
+          :checked="todo.completed"
           @change="toggleTodo(index)"
           class="todo-checkbox"
         />
@@ -120,6 +120,24 @@ export default {
 .completed {
   text-decoration: line-through;
   color: #6b7280;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s;
+}
+
+.todo-item:hover {
+  background-color: #f8fafc;
+}
+
+.todo-item.completed {
+  background-color: #f8fafc;
 }
 
 .remove-button {

@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
-    <h1 class="title">Hi Liana, I am running from within a docker container</h1>
-    <button @click="showMessage" class="button primary">Click Me</button>
+    <h1 class="title">Hi! I am a Vue3 app served from a docker container on a windows machine without node installed.</h1>
+    <button @click="showMessage" class="button primary">Walrus Button</button>
     <p v-if="message" class="message">{{ message }}</p>
     
     <div class="components-container">
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     showMessage() {
-      this.message = 'hot reload test 2'
+      this.message = 'hot reload works!'
     }
   }
 }
